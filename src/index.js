@@ -19,7 +19,13 @@ const handleSubmit = function() {
     btn.className = "button"
     li.append(btn, ddl)
     btn.addEventListener('click', () => {
-      li.remove()
+      li.remove();
+      const done = document.querySelector('#done')
+      const doneTitle = done.querySelector('h2')
+      doneTitle.textContent = "Completed Tasks"
+      const dt = document.createElement('li')
+      dt.textContent = newTask
+      done.append(dt)
     })
     list.append(li)
     form.reset()
